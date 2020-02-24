@@ -1,0 +1,70 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.zmj</groupId>
+  <artifactId>HttpClientDemo</artifactId>
+  <packaging>war</packaging>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>HttpClientDemo Maven Webapp</name>
+  <url>http://maven.apache.org</url>
+  <properties>     	<!--项目开发者属性-->                                                               
+   	  <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>   
+			    	<!-- 文件拷贝时的编码，设置为UTF-8 -->
+      <spring.version>4.0.0.RELEASE</spring.version> <!-- 为了确定每个框架的版本号，锁定版本 -->
+      <jackson.version>2.9.8</jackson.version>
+  </properties>
+  <dependencies>
+  
+  	<!-- SpringMVC的一些相关jar -->
+    <dependency>
+       <groupId>org.springframework</groupId>
+       <artifactId>spring-context</artifactId>
+       <version>${spring.version}</version>
+    </dependency>
+    <dependency>
+       	<groupId>org.springframework</groupId>
+       	<artifactId>spring-beans</artifactId>
+       	<version>${spring.version}</version>
+     </dependency>
+    <dependency>
+       	<groupId>org.springframework</groupId>
+       	<artifactId>spring-webmvc</artifactId>
+       	<version>${spring.version}</version>
+     </dependency>
+	<dependency>
+	    <groupId>com.fasterxml.jackson.core</groupId>
+	    <artifactId>jackson-databind</artifactId>
+	    <version>${jackson.version}</version>
+	</dependency>
+	
+	
+	<!-- HttpClient 用到的jar -->
+	<dependency>
+	    <groupId>org.apache.httpcomponents</groupId>
+	    <artifactId>httpclient</artifactId>
+	    <version>4.5.10</version>
+	</dependency>
+	<dependency>
+	    <groupId>commons-io</groupId>
+	    <artifactId>commons-io</artifactId>
+	    <version>2.5</version>
+	</dependency>
+
+  </dependencies>
+  <build>
+    <finalName>HttpClientDemo</finalName>
+    <pluginManagement>
+    	<plugins>
+    		<plugin>
+    			<groupId>org.apache.tomcat.maven</groupId>
+    			<artifactId>tomcat8-maven-plugin</artifactId>
+    			<version>8.0.38</version>
+    			<configuration>
+    				<path>/</path>
+    				<port>8080</port>
+    			</configuration>
+    		</plugin>
+    	</plugins>
+    </pluginManagement>
+  </build>
+</project>
